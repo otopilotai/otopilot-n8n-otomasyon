@@ -49,7 +49,7 @@ Zamanlayıcı       ──┘          │  + AI modelleri       │      içeri
 
 ```bash
 # Ubuntu sunucuda, root olarak
-git clone https://github.com/sowyersalamanka-sys/otopilot-n8n-otomasyon.git && cd otopilot-n8n-otomasyon/setup
+git clone https://github.com/otopilotai/otopilot-n8n-otomasyon.git && cd otopilot-n8n-otomasyon/setup
 cp .env.example .env && nano .env          # alan adını ve anahtarı yaz
 docker compose up -d                        # birkaç dakika sonra https://<alan-adin> açılır
 ```

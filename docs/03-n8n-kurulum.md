@@ -44,7 +44,7 @@ Kaynak: [Docker · Ubuntu kurulumu](https://docs.docker.com/engine/install/ubunt
 
 Bu repodaki [`setup/`](../setup) klasörünü sunucuya al:
 ```bash
-git clone https://github.com/sowyersalamanka-sys/otopilot-n8n-otomasyon.git
+git clone https://github.com/otopilotai/otopilot-n8n-otomasyon.git
 cd otopilot-n8n-otomasyon/setup
 cp .env.example .env
 ```
