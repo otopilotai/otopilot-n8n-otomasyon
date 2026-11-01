@@ -1,0 +1,4 @@
+.env
+*.tar.gz
+yedek-*.json
+.DS_Store

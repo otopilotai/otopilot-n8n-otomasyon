@@ -1,0 +1,175 @@
+{
+  "name": "WhatsApp Asistanı (Menü + Butona Göre Yönlendirme)",
+  "nodes": [
+    {
+      "parameters": {
+        "updates": ["messages"]
+      },
+      "id": "a1b2c3d4-0001-4000-8000-000000000001",
+      "name": "WhatsApp Tetikleyici",
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [0, 300],
+      "webhookId": "a1b2c3d4-0001-4000-8000-0000000000aa"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "loose" },
+          "conditions": [
+            {
+              "id": "c0000001-0000-4000-8000-000000000001",
+              "leftValue": "={{ $json.messages?.[0]?.type }}",
+              "rightValue": "text",
+              "operator": { "type": "string", "operation": "equals" }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0002-4000-8000-000000000002",
+      "name": "Mesaj mı, Buton mu?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [260, 300]
+    },
+    {
+      "parameters": {
+        "operation": "sendTemplate",
+        "phoneNumberId": "TELEFON_NUMARASI_ID",
+        "recipientPhoneNumber": "={{ $('WhatsApp Tetikleyici').item.json.messages[0].from }}",
+        "template": "menu_sablonu|tr"
+      },
+      "id": "a1b2c3d4-0003-4000-8000-000000000003",
+      "name": "Menü Şablonu Gönder",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [540, 160]
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "c0000002-0000-4000-8000-000000000001",
+                    "leftValue": "={{ $json.messages?.[0]?.interactive?.button_reply?.id ?? $json.messages?.[0]?.button?.payload ?? '' }}",
+                    "rightValue": "FIYAT",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Fiyat"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "c0000002-0000-4000-8000-000000000002",
+                    "leftValue": "={{ $json.messages?.[0]?.interactive?.button_reply?.id ?? $json.messages?.[0]?.button?.payload ?? '' }}",
+                    "rightValue": "RANDEVU",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Randevu"
+            },
+            {
+              "conditions": {
+                "options": { "caseSensitive": false, "leftValue": "", "typeValidation": "loose" },
+                "conditions": [
+                  {
+                    "id": "c0000002-0000-4000-8000-000000000003",
+                    "leftValue": "={{ $json.messages?.[0]?.interactive?.button_reply?.id ?? $json.messages?.[0]?.button?.payload ?? '' }}",
+                    "rightValue": "SORU",
+                    "operator": { "type": "string", "operation": "equals" }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Genel Soru"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "id": "a1b2c3d4-0004-4000-8000-000000000004",
+      "name": "Seçime Göre Yönlendir",
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [540, 440]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "TELEFON_NUMARASI_ID",
+        "recipientPhoneNumber": "={{ $('WhatsApp Tetikleyici').item.json.messages[0].from }}",
+        "textBody": "📋 Fiyat listemiz:\n• Ürün/Hizmet 1 – ...\n• Ürün/Hizmet 2 – ...\nDetay için bize yazabilirsiniz."
+      },
+      "id": "a1b2c3d4-0005-4000-8000-000000000005",
+      "name": "Fiyat Listesi Gönder",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [840, 300]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "TELEFON_NUMARASI_ID",
+        "recipientPhoneNumber": "={{ $('WhatsApp Tetikleyici').item.json.messages[0].from }}",
+        "textBody": "📅 Randevu için uygun gün ve saati yazın, en kısa sürede onaylayalım. Çalışma saatlerimiz: ..."
+      },
+      "id": "a1b2c3d4-0006-4000-8000-000000000006",
+      "name": "Randevu Bilgisi Gönder",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [840, 460]
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "TELEFON_NUMARASI_ID",
+        "recipientPhoneNumber": "={{ $('WhatsApp Tetikleyici').item.json.messages[0].from }}",
+        "textBody": "💬 Sorunuzu yazın, ekibimiz size dönüş yapacak."
+      },
+      "id": "a1b2c3d4-0007-4000-8000-000000000007",
+      "name": "Genel Soru Yanıtla",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [840, 620]
+    }
+  ],
+  "connections": {
+    "WhatsApp Tetikleyici": {
+      "main": [[{ "node": "Mesaj mı, Buton mu?", "type": "main", "index": 0 }]]
+    },
+    "Mesaj mı, Buton mu?": {
+      "main": [
+        [{ "node": "Menü Şablonu Gönder", "type": "main", "index": 0 }],
+        [{ "node": "Seçime Göre Yönlendir", "type": "main", "index": 0 }]
+      ]
+    },
+    "Seçime Göre Yönlendir": {
+      "main": [
+        [{ "node": "Fiyat Listesi Gönder", "type": "main", "index": 0 }],
+        [{ "node": "Randevu Bilgisi Gönder", "type": "main", "index": 0 }],
+        [{ "node": "Genel Soru Yanıtla", "type": "main", "index": 0 }]
+      ]
+    }
+  },
+  "pinData": {},
+  "settings": { "executionOrder": "v1" },
+  "active": false,
+  "meta": { "templateCredsSetupCompleted": false },
+  "tags": []
+}

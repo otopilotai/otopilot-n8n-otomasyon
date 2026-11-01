@@ -1,0 +1,7 @@
+# Alan adı .env dosyasındaki N8N_HOST değerinden okunur.
+# Caddy, Let's Encrypt sertifikasını otomatik alır ve yeniler.
+{$N8N_HOST} {
+	reverse_proxy n8n:5678 {
+		flush_interval -1
+	}
+}
