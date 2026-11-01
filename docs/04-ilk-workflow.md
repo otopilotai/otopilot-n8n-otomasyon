@@ -36,7 +36,15 @@ Hiçbir dış hesap gerektirmeyen bir başlangıç örneği:
 4. Üstteki **Execute workflow** ile test et, her düğümün altındaki çıktıyı incele.
 5. Sağ üstten **Save** → **Active** anahtarını aç. Artık her sabah kendi kendine çalışır.
 
-## 4.4 İfadeler (expressions) kısa rehber
+## 4.4 Örnek: Gerçek bir workflow nasıl görünür?
+
+Aşağıdaki workflow, gelen bir mesajın türüne bakıp iki farklı yola ayrılıyor; bir yolda menü gönderiyor, diğerinde seçime göre üç farklı dala yönlendiriyor. Her kutu bir düğüm, çizgiler verinin akış yönü.
+
+![Örnek workflow](../assets/ornek-workflow.png)
+
+Okuma sırası: **soldan sağa**. Tetikleyici → karar düğümü (IF) → işlem düğümleri. Karar düğümlerinin (IF, Switch) birden fazla çıkışı vardır; her çıkış farklı bir yola gider.
+
+## 4.5 İfadeler (expressions) kısa rehber
 
 | İfade | Ne verir |
 |---|---|
@@ -46,7 +54,7 @@ Hiçbir dış hesap gerektirmeyen bir başlangıç örneği:
 | `{{ $json.metin.toUpperCase() }}` | JavaScript yöntemleri kullanılabilir |
 | `{{ $json.a?.b ?? 'yok' }}` | Alan yoksa hata yerine varsayılan değer |
 
-## 4.5 İyi alışkanlıklar
+## 4.6 İyi alışkanlıklar
 
 - **Düğümleri Türkçe ve anlamlı adlandır** ("Mesaj mı, Buton mu?" gibi). Üç ay sonra kendin teşekkür edeceksin.
 - **Test verisini sabitle (pin):** Tetikleyiciden gelen örnek veriyi pinle, her testte tekrar mesaj atmak zorunda kalma.
@@ -56,4 +64,4 @@ Hiçbir dış hesap gerektirmeyen bir başlangıç örneği:
 Resmi kaynaklar: [n8n dokümantasyonu](https://docs.n8n.io) · n8n ücretsiz kurslar (docs.n8n.io → Courses) · [n8n topluluk forumu](https://community.n8n.io)
 
 ---
-[← Sunucuya n8n kurulumu](03-n8n-kurulum.md) · [Sonraki: WhatsApp asistanı →](05-whatsapp-asistani.md)
+[← Sunucuya n8n kurulumu](03-n8n-kurulum.md) · [Sonraki: API'ler ve kimlik bilgileri →](05-apiler-ve-kimlik-bilgileri.md)

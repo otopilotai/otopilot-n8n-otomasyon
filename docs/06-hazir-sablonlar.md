@@ -23,7 +23,7 @@ Her workflow'u sıfırdan kurmana gerek yok. Binlerce hazır şablonu içe aktar
 
 ## İçe aktardıktan sonra kontrol listesi
 
-- [ ] Her düğümde kendi **kimlik bilgini** seç (şablonlar kimlik bilgisi içermez).
+- [ ] Her düğümde kendi **kimlik bilgini** seç (şablonlar kimlik bilgisi içermez). Nasıl yapılacağı: [Bölüm 5](05-apiler-ve-kimlik-bilgileri.md).
 - [ ] Sabit değerleri (tablo ID'leri, e-posta adresleri, kanal adları) kendi değerlerinle değiştir.
 - [ ] **Community node** (topluluk düğümü) kullanılıyorsa kur: Settings → Community nodes. Kurmadan önce düğümün güvenilirliğini kontrol et.
 - [ ] Önce **elle test et**, sonra aktifleştir.
@@ -33,7 +33,8 @@ Her workflow'u sıfırdan kurmana gerek yok. Binlerce hazır şablonu içe aktar
 
 | Arama terimi (n8n.io/workflows) | Neden iyi bir başlangıç |
 |---|---|
-| `whatsapp` | İşletmelerin en çok istediği kanal |
+| `youtube` | Video yükleme, açıklama/etiket üretimi, kanal raporları |
+| `whatsapp` / `telegram` | Müşteri mesajları ve bildirimler |
 | `ai agent` | AI'ın araç kullandığı örnek kurulumlar |
 | `google sheets` | Neredeyse her otomasyonun veri ayağı |
 | `lead` / `crm` | Satış ekipleri için hazır akışlar |
@@ -41,4 +42,4 @@ Her workflow'u sıfırdan kurmana gerek yok. Binlerce hazır şablonu içe aktar
 | `social media` / `content` | İçerik üretimi ve planlı paylaşım |
 
 ---
-[← WhatsApp asistanı](05-whatsapp-asistani.md) · [Sonraki: İşletmelere ne satabilirsin? →](07-isletmelere-satis.md)
+[← API'ler ve kimlik bilgileri](05-apiler-ve-kimlik-bilgileri.md) · [Sonraki: İşletmelere ne satabilirsin? →](07-isletmelere-satis.md)

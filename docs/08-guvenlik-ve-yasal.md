@@ -37,12 +37,13 @@ Kampanya, indirim, duyuru gibi **ticari elektronik iletiler** göndermek için T
 
 Kaynak: [İYS · İleti Yönetim Sistemi](https://iys.org.tr)
 
-## 8.4 WhatsApp (Meta) kuralları
+## 8.4 Platform kuralları (YouTube, Meta, diğerleri)
 
-- İşletmenin ilk mesajı atması için kişinin **onayı (opt-in)** ve **onaylı bir şablon** gerekir.
-- Müşteri yazdıktan sonra 24 saatlik hizmet penceresinde serbest metin gönderilebilir.
-- Spam ve izinsiz toplu mesaj numaranın kalitesini düşürür, numara kısıtlanabilir.
-- Mesaj ücretleri ve kurallar değişebilir; güncel bilgi için: [WhatsApp Business Policy](https://business.whatsapp.com/policy) · [Fiyatlandırma](https://developers.facebook.com/docs/whatsapp/pricing)
+Otomasyonla bir platforma içerik yüklüyor veya mesaj gönderiyorsan o platformun kurallarına uymak zorundasın:
+
+- **YouTube:** Otomatik/AI ile üretilen içerikte telif, yanıltıcı içerik ve "tekrarlayan/düşük emekli içerik" politikalarına dikkat et; gerçekçi AI içerikleri için açıklama (disclosure) seçeneğini kullan. Bkz. [YouTube Topluluk Kuralları](https://www.youtube.com/howyoutubeworks/policies/community-guidelines/)
+- **WhatsApp / Instagram (Meta):** İşletmenin ilk mesajı için kişinin onayı ve onaylı şablon gerekir; izinsiz toplu mesaj numarayı/hesabı kısıtlatır. Bkz. [WhatsApp Business Policy](https://business.whatsapp.com/policy)
+- **API kullanım şartları:** Her servisin API'sinin kota ve kullanım şartları vardır; kotayı aşmak veya şartları ihlal etmek erişimin kesilmesine yol açabilir.
 
 ## 8.5 Sosyal medyada paylaşım
 
