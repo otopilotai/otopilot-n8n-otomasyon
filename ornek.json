@@ -1,0 +1,5 @@
+{"beats": [
+ {"type": "question", "d": 5, "color": "nane", "lines": ["Otomasyonla ilk", "satışı nereden", "yapardın?"], "hint": "ANKETE OY VER"},
+ {"type": "card", "d": 2.5, "color": "sari", "icon": "shop", "l1": "YÜZ YÜZE", "l2": "KAFE · KUAFÖR"},
+ {"type": "card", "d": 2.5, "color": "pembe", "icon": "robot", "l1": "OTOMATİK", "l2": "MAKİNE BULSUN", "rot": 3},
+ {"type": "cta", "d": 3, "color": "nane", "icon": "plane", "big": "BU AKŞAM 20:00", "pill": "GÜN 9 · KASA ARTIDA", "pose": "wave"}]}
