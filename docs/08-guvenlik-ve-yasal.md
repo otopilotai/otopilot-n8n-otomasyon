@@ -27,7 +27,7 @@ WhatsApp mesajları, telefon numaraları, isimler ve randevu bilgileri **kişise
 - Müşterilere **aydınlatma metni** sunulmalı (örn. menü mesajında link).
 - Veriler yalnızca gereken süre kadar saklanmalı; sunucu güvenliği (2FA, güncel yazılım, güçlü şifreler) senin sorumluluğundadır.
 - **Sağlık verisi özel nitelikli kişisel veridir** (klinikler!). Teşhis, tedavi gibi bilgileri otomasyonlarda işlemekten kaçın ya da bir hukukçuyla birlikte kurgula.
-- Yurt dışındaki sunucuya (Almanya/Finlandiya) ve yurt dışı servislere (Meta, OpenAI) veri aktarımı KVKK'da ayrıca düzenlenmiştir; müşterine bu konuda danışmanlık aldırmasını öner.
+- Yurt dışındaki sunucuya (Almanya/Finlandiya) ve yurt dışı servislere (Meta, OpenAI) veri aktarımı KVKK'da ayrıca düzenlenmiştir; müşterine bu konuda danışmanlık aldırmasını öner. Tüm ayrıntılar: [Bölüm 10 · KVKK uyumu](10-kvkk-uyumu.md).
 
 Kaynak: [KVKK resmi sitesi](https://www.kvkk.gov.tr)
 

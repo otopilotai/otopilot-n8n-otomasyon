@@ -66,7 +66,7 @@ Aylık ödeme = O ayın API harcaması (maliyetine) + Sabit yönetim ücreti   (
 - AI sağlayıcında **aylık harcama limiti** koy; müşteri başına ayrı API anahtarı ya da ayrı proje kullan ki kullanımı ayrı ölçebilesin.
 - Her ay kısa bir **kullanım raporu** gönder (mesaj sayısı, API tutarı).
 - Sözleşmede yaz: Ücrete neler dahil (ör. ayda 2 küçük değişiklik), ödeme günü, iptal süresi, ayrılırsa ne olacağı (erişim iptal edilir; workflow sende kalır, işletmenin verisi ona iade edilir/silinir).
-- İşletmenin verdiği token'ları n8n'in şifreli kimlik bilgilerinde sakla, kimseyle paylaşma. Müşteri verisini işlediğin için KVKK kapsamında **veri işleyen** sayılabilirsin; aranızda yazılı bir veri işleme anlaşması yap (bkz. Bölüm 8).
+- İşletmenin verdiği token'ları n8n'in şifreli kimlik bilgilerinde sakla, kimseyle paylaşma. Müşteri verisini işlediğin için KVKK kapsamında **veri işleyen** sayılabilirsin; aranızda yazılı bir veri işleme sözleşmesi yap (ayrıntılar [Bölüm 10](10-kvkk-uyumu.md)).
 
 **Aylık fatura/özet mesajı (kopyala-yapıştır):**
 
@@ -114,10 +114,10 @@ Onaylarsanız [gün] başlayabiliriz.
 ## 9.7 Yasal ve vergi notu
 
 - Aldığın ödemeler gelir sayılır. Ödeme almadan önce **fatura veya serbest meslek makbuzu** düzenleyebilecek bir yapın olsun (ör. şahıs şirketi). Hangi yapının sana uygun olduğunu bir **mali müşavire** danış.
-- Müşteri verisiyle çalışıyorsan [Bölüm 8](08-guvenlik-ve-yasal.md)'deki KVKK ve İYS notlarına uy.
+- Müşteri verisiyle çalışıyorsan [Bölüm 10 · KVKK uyumu](10-kvkk-uyumu.md)'ndaki adımları uygula.
 - n8n lisansı gereği müşteriye n8n arayüzüne erişim verme ve n8n'i kendi markanmış gibi sunma (ayrıntılar Bölüm 8'de).
 
 > Bu bölüm bilgi amaçlıdır; hukuki, mali veya vergi danışmanlığı değildir.
 
 ---
-[← Güvenlik, lisans ve yasal notlar](08-guvenlik-ve-yasal.md) · [Ana sayfa](../README.md)
+[← Güvenlik, lisans ve yasal notlar](08-guvenlik-ve-yasal.md) · [Ana sayfa](../README.md) · [Sonraki: KVKK uyumu →](10-kvkk-uyumu.md)

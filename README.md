@@ -37,6 +37,7 @@ Zamanlayıcı       ──┘          │  + AI modelleri       │      içeri
 | 7 | [İşletmelere ne satabilirsin?](docs/07-isletmelere-satis.md) | Sektör sektör fikirler, fiyatlandırma modeli, satış süreci |
 | 8 | [Güvenlik, lisans ve yasal notlar](docs/08-guvenlik-ve-yasal.md) | n8n lisansı, KVKK, İYS, platform kuralları |
 | 9 | [Fiyatlandırma şablonu](docs/09-fiyatlandirma-sablonu.md) | Kurulum + aylık yönetim modeli, paketler, teklif mesajı |
+| 10 | [KVKK uyumu: kendini koru](docs/10-kvkk-uyumu.md) | Roller, veri işleme sözleşmesi, yurt dışı aktarım, VERBİS, ihlal, kontrol listesi |
 
 ## Hazır dosyalar
 
