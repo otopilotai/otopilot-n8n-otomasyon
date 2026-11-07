@@ -62,4 +62,4 @@ Otomasyonla bir platforma içerik yüklüyor veya mesaj gönderiyorsan o platfor
 - [ ] API anahtarları müşteri başına ayrı ve gerektiğinde iptal edilebilir
 
 ---
-[← İşletmelere ne satabilirsin?](07-isletmelere-satis.md) · [Ana sayfa](../README.md)
+[← İşletmelere ne satabilirsin?](07-isletmelere-satis.md) · [Ana sayfa](../README.md) · [Sonraki: Fiyatlandırma şablonu →](09-fiyatlandirma-sablonu.md)

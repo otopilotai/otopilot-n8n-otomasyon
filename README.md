@@ -36,6 +36,7 @@ Zamanlayıcı       ──┘          │  + AI modelleri       │      içeri
 | 6 | [Hazır şablon kaynakları](docs/06-hazir-sablonlar.md) | Binlerce hazır workflow'u nereden bulursun, nasıl içe aktarırsın |
 | 7 | [İşletmelere ne satabilirsin?](docs/07-isletmelere-satis.md) | Sektör sektör fikirler, fiyatlandırma modeli, satış süreci |
 | 8 | [Güvenlik, lisans ve yasal notlar](docs/08-guvenlik-ve-yasal.md) | n8n lisansı, KVKK, İYS, platform kuralları |
+| 9 | [Fiyatlandırma şablonu](docs/09-fiyatlandirma-sablonu.md) | Kurulum + aylık bakım, paketler, teklif mesajı |
 
 ## Hazır dosyalar
 
