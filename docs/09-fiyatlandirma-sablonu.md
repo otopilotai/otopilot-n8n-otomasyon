@@ -2,17 +2,17 @@
 
 Bu bölüm, "30 günde 10.000$" serisinde işletmelere otomasyon satarken kullandığım fiyatlandırma mantığını anlatır. Kendi işine uyarla, kopyala, kullan.
 
-> **Gerçek rakamlar (serinin 9. günü itibarıyla):** Emlakçıya katalog botu kurulumu **7.500 TL**, iki kuaföre otomatik randevu sistemi **6.000 TL + 6.000 TL**. Bu bölümdeki diğer aralıklar benim gerçekleşmiş satışım değil, **öneri** niteliğindedir. Kendi şehrine, sektörüne ve tecrübene göre ayarla.
+> **Gerçek rakamlar (serinin 9. günü itibarıyla):** Emlakçıya katalog botu kurulumu **7.500 TL**, iki kuaföre otomatik randevu sistemi **6.000 TL + 6.000 TL**. Aylık yönetim modelinde örnek fatura: **1.000 TL API + 2.000 TL yönetim = 3.000 TL/ay** (vergiler hariç). Bu bölümdeki diğer aralıklar benim gerçekleşmiş satışım değil, **öneri** niteliğindedir. Kendi şehrine, sektörüne ve tecrübene göre ayarla.
 
 ## 9.1 Fiyatın 3 parçası
 
 | Parça | Ne zaman alınır? | Neyi karşılar? |
 |---|---|---|
 | **Kurulum ücreti** | Tek sefer, iş başında | Analiz, workflow'u işletmeye uyarlama, test, teslim, kısa eğitim |
-| **Aylık bakım** *(opsiyonel)* | Her ay | Sunucu, izleme, küçük değişiklikler, hata düzeltme, destek |
+| **Aylık yönetim** *(opsiyonel)* | Her ay | API kullanımı (maliyetine) + sistemi çalıştırma, izleme, güncelleme, destek |
 | **Ek iş** | Talep geldikçe | Yeni özellik, yeni kanal (ör. Instagram'a ek WhatsApp), raporlama |
 
-Kural: **Kurulum bir kere kazandırır, bakım her ay kazandırır.** Mümkünse her kuruluma bir bakım paketi öner.
+Kural: **Kurulum bir kere kazandırır, aylık yönetim her ay kazandırır.** Mümkünse her kuruluma aylık yönetim öner (bkz. 9.4).
 
 ## 9.2 Şablon mantığı: aynı workflow'u tekrar sat
 
@@ -24,28 +24,62 @@ Asıl kazanç burada: Bir sistemi bir kez iyi kur, **boş şablonunu sakla**. Ye
 
 ## 9.3 Örnek paketler
 
-| Paket | İçerik | Kurulum | Aylık bakım (öneri) |
+| Paket | İçerik | Kurulum | Aylık yönetim ücreti (öneri, API hariç) |
 |---|---|---|---|
-| **Randevu asistanı** *(gerçek: 6.000 TL)* | Mesajla randevu alma, takvim, onay ve hatırlatma | 5.000 – 8.000 TL | 750 – 1.500 TL |
-| **Katalog / bilgi botu** *(gerçek: 7.500 TL)* | Müşteri sorusuna göre ürün, daire veya menü bilgisi ve katalog gönderme | 6.000 – 10.000 TL | 1.000 – 2.000 TL |
-| **SSS + yönlendirme asistanı** | Sık sorulan sorular, fiyat listesi, adres ve saatler, insana devretme | 4.000 – 6.000 TL | 500 – 1.000 TL |
-| **Müşteri bulma / raporlama** | Aday listesi, otomatik tablo, haftalık rapor | 7.500 – 12.000 TL | 1.000 – 2.500 TL |
+| **Randevu asistanı** *(gerçek: 6.000 TL)* | Mesajla randevu alma, takvim, onay ve hatırlatma | 5.000 – 8.000 TL | 1.500 – 2.500 TL |
+| **Katalog / bilgi botu** *(gerçek: 7.500 TL)* | Müşteri sorusuna göre ürün, daire veya menü bilgisi ve katalog gönderme | 6.000 – 10.000 TL | 2.000 – 3.000 TL |
+| **SSS + yönlendirme asistanı** | Sık sorulan sorular, fiyat listesi, adres ve saatler, insana devretme | 4.000 – 6.000 TL | 1.000 – 2.000 TL |
+| **Müşteri bulma / raporlama** | Aday listesi, otomatik tablo, haftalık rapor | 7.500 – 12.000 TL | 2.000 – 3.500 TL |
 
 Fiyatı yukarı çeken şeyler: Birden fazla kanal, ödeme veya CRM entegrasyonu, çok şubeli işletme, özel raporlar, hızlı teslim.
 Fiyatı aşağı çeken şeyler: Hazır şablonun birebir uyması, tek kanal, işletmenin içeriği (fiyat listesi, katalog) hazır vermesi.
 
-## 9.4 Aylık bakımı hesapla
+## 9.4 Aylık yönetim modeli (benim kullandığım)
 
-Önce kendi aylık maliyetini çıkar, sonra üstüne emeğini koy:
+Sistemi işletmeye "teslim edip bırakmak" yerine **ben çalıştırıyorum**:
+
+- **Workflow benim:** Kendi n8n sunucumda, kendi şablonumla çalışır.
+- **AI ve diğer API anahtarları benim:** Örneğin Claude kullanımı benim hesabımdan ödenir.
+- **İşletme sadece erişim verir:** Kendi kanalına (ör. WhatsApp Business, Instagram, takvim) bağlanmam için gereken API izni ya da token'ı verir. n8n arayüzüne erişmez.
+- **Her ay tek fatura:** O ay harcanan API tutarı **maliyetine** yansıtılır, üstüne sabit **yönetim ücreti** eklenir.
 
 ```
-Aylık maliyet  = sunucu payı + API/kullanım ücretleri + varsa ek araçlar
-Aylık bakım    = aylık maliyet + (ayda ayıracağın destek saati × saat ücretin)
+Aylık ödeme = O ayın API harcaması (maliyetine) + Sabit yönetim ücreti   (+ vergiler)
 ```
 
-- Tek bir sunucuda birden fazla müşterinin workflow'u çalışabilir; sunucu maliyetini müşterilere paylaştır.
-- AI (ör. Claude) ve mesajlaşma API'leri **kullanıma göre** ücretlendirilir. Faturanı ilk ay takip et, bakım fiyatını gerçek kullanıma göre güncelle.
-- Bakıma neyin dahil olduğunu **yazılı** belirt (ör. "ayda 2 küçük değişiklik"). Gerisi ek iş olsun.
+**Gerçek örnek:**
+
+| Kalem | Tutar |
+|---|---|
+| API kullanımı (1 ay) | 1.000 TL |
+| Sistem yönetimi | 2.000 TL |
+| **İşletmenin ödemesi** | **3.000 TL / ay** (vergiler hariç) |
+
+**Neden bu model?**
+- İşletme teknik hiçbir şeyle uğraşmaz; sen düzenli aylık gelir elde edersin.
+- API maliyeti şeffaf olduğu için fiyat tartışması azalır: "Kullandığın kadar + yönetim".
+- Aynı sunucuda birden fazla işletme çalışır; her yeni müşteri sunucu maliyetini paylaşır.
+
+**İşletmeye "ortalama fiyat" vermek:** API harcaması aydan aya değişir. Teklifte geçmiş kullanımdan bir **ortalama** ver (ör. "ortalama 3.000 TL/ay, kullanıma göre ±"), ya da ilk ayı ölçüp ikinci aydan itibaren sabit paket fiyatına geç.
+
+**Kendini korumak için:**
+- AI sağlayıcında **aylık harcama limiti** koy; müşteri başına ayrı API anahtarı ya da ayrı proje kullan ki kullanımı ayrı ölçebilesin.
+- Her ay kısa bir **kullanım raporu** gönder (mesaj sayısı, API tutarı).
+- Sözleşmede yaz: Ücrete neler dahil (ör. ayda 2 küçük değişiklik), ödeme günü, iptal süresi, ayrılırsa ne olacağı (erişim iptal edilir; workflow sende kalır, işletmenin verisi ona iade edilir/silinir).
+- İşletmenin verdiği token'ları n8n'in şifreli kimlik bilgilerinde sakla, kimseyle paylaşma. Müşteri verisini işlediğin için KVKK kapsamında **veri işleyen** sayılabilirsin; aranızda yazılı bir veri işleme anlaşması yap (bkz. Bölüm 8).
+
+**Aylık fatura/özet mesajı (kopyala-yapıştır):**
+
+```
+Merhaba [İşletme adı], [Ay] özeti:
+
+📊 Asistanınız bu ay [N] mesajı yanıtladı, [M] randevu/talep oluşturdu.
+💳 API kullanımı: [X] TL
+🛠 Sistem yönetimi: [Y] TL
+= Toplam: [X+Y] TL (+ KDV)
+
+Ödeme son günü: [tarih]. Teşekkürler!
+```
 
 ## 9.5 Teklif mesajı (kopyala-yapıştır)
 
@@ -57,8 +91,9 @@ Görüştüğümüz [randevu / katalog / SSS] asistanının teklifi:
 ✅ Kurulum (tek sefer): [X] TL
    - İşletmenize özel ayarlama, test ve teslim
    - Kısa kullanım eğitimi
-✅ Aylık bakım (opsiyonel): [Y] TL / ay
-   - Sunucu ve izleme, küçük güncellemeler, destek
+✅ Aylık yönetim (opsiyonel): API kullanımı (maliyetine) + [Y] TL / ay
+   - Sistemi ben çalıştırırım: sunucu, izleme, güncelleme, destek
+   - Ortalama aylık toplam: ~[Z] TL
 
 ⏱ Teslim süresi: [N] iş günü
 💳 Ödeme: %50 başta, %50 teslimde
@@ -72,7 +107,8 @@ Onaylarsanız [gün] başlayabiliriz.
 |---|---|
 | "Pahalı." | "Bu sistem ayda kaç mesajı sizin yerinize cevaplıyor? Bir çalışanın o mesajlara harcadığı süreyi düşünün." Gerekirse kapsamı küçült, fiyatı değil. |
 | "Düşüneyim." | "Size 1 haftalık demo kurayım, kendi müşterilerinizle deneyin." |
-| "Bozulursa ne olacak?" | "Aylık bakım tam bunun için: izliyorum, sorun olursa ben düzeltiyorum." |
+| "Bozulursa ne olacak?" | "Aylık yönetim tam bunun için: sistemi ben çalıştırıyorum, sorun olursa ben düzeltiyorum." |
+| "API ücreti neden ayrı?" | "Kullandığınız kadar ödüyorsunuz; az mesaj gelen ay faturanız da düşük olur. Her ay raporunu gönderiyorum." |
 | "Başkası daha ucuza yapıyor." | Neyin dahil olduğunu kıyasla: test, eğitim, bakım, destek. |
 
 ## 9.7 Yasal ve vergi notu
